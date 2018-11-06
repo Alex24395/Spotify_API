@@ -52,7 +52,7 @@ if __name__ == '__main__':
     
     # Get credential info
     config = configparser.ConfigParser()
-    config.read('local_config.ini')
+    config.read('config.ini')
     cid = config['DEFAULT']['cid']
     secret = config['DEFAULT']['secret']
     username = config['DEFAULT']['username']
