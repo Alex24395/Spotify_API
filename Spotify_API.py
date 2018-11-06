@@ -52,10 +52,10 @@ if __name__ == '__main__':
     
     # Get credential info
     config = configparser.ConfigParser()
-    config.read('creadentials.ini')
-    cid = config['cid']
-    secret = config['secret']
-    username = config['username']
+    config.read('local_config.ini')
+    cid = config['DEFAULT']['cid']
+    secret = config['DEFAULT']['secret']
+    username = config['DEFAULT']['username']
 
     client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
     sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
