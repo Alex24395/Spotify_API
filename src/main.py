@@ -47,7 +47,7 @@ if __name__ == '__main__':
                         all_songs.append(songs_info[i])
         
         # Write song info to csv
-        songs_file_name = main_dir + "/data/spotify_songs.csv"
+        songs_file_name = main_dir + "/generated_data/spotify_songs.csv"
         songs_file_header = ['artist_name', 'song_name', 'popularity', 'duration_ms', 'danceability', 'energy', 'key', 'loudness', 
                     'mode', 'speechiness', 'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo', 'time_signature']
         write_to_csv(songs_file_name, all_songs, songs_file_header)
@@ -55,7 +55,7 @@ if __name__ == '__main__':
         # Get genres of artists
         artist_genres = []
         artist_names = []
-        with open(main_dir + "/data/spotify_songs.csv") as csv_file:
+        with open(main_dir + "/generated_data/spotify_songs.csv") as csv_file:
             reader = csv.reader(csv_file, delimiter=',')
             next(reader, None) #skip the header
             for row in reader:
@@ -78,7 +78,7 @@ if __name__ == '__main__':
             artist_genres.append(genres)
         # print(artist_genres[0])
         # Write genres to csv
-        genres_file_name = main_dir + "/data/genres.csv"
+        genres_file_name = main_dir + "/generated_data/genres.csv"
         genres_file_header = ['artist_name', 'genres']
         write_to_csv(genres_file_name, genres_file_header, artist_genres)
 

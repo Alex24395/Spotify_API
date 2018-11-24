@@ -11,7 +11,7 @@ if __name__ == '__main__':
     
     songs_artists = []
     
-    data = main_dir + "/data/spotify_songs.csv"
+    data = main_dir + "/generated_data/spotify_songs.csv"
     
     with open(data) as csv_file:
         reader = csv.reader(csv_file, delimiter=',')
@@ -19,7 +19,7 @@ if __name__ == '__main__':
         for row in reader:
             songs_artists.append(row[:2])
     
-    with open(main_dir + "/data/lyrics.csv", "w") as csv_file:
+    with open(main_dir + "/generated_data/lyrics.csv", "w") as csv_file:
         writer = csv.writer(csv_file, delimiter=',')
         writer.writerow(['artist_name', 'song_name', 'lyrics'])
         for item in songs_artists:
